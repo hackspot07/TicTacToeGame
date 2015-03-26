@@ -18,7 +18,7 @@ public class Game {
         while (true) {
             board.printBoard();
             Player player = getPlayer(count);
-            System.out.println("Play Mr. "+player.getName());
+            System.out.println("Play Mr.  "+player.getName());
             System.out.println("Enter Row And Column Number Between 0-2:");
             Scanner sc = new Scanner(System.in);
             int row = sc.nextInt();
