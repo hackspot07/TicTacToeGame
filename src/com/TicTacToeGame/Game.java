@@ -24,15 +24,14 @@ public class Game {
             int row = sc.nextInt();
             int col = sc.nextInt();
             if(board.isValidCoordinate(row, col))
-                play(row, col);
+                play(player, row, col);
             else
-                System.out.println("Enter valid coordinate");
+                System.out.println("Enter valid coordinate ");
         }
 
     }
 
-    private void play(int row, int col) throws Exception {
-        Player player = getPlayer(count);
+    private void play(Player player ,int row, int col) throws Exception {
         board.setValue(player,row, col);
         if(board.hasWon(player)) {
             board.printBoard();
