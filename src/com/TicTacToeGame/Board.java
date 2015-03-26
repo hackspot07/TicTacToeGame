@@ -19,6 +19,7 @@ public class Board {
             }
             System.out.println();
         }
+        System.out.println();
     }
 
     public void setValue(Player player, int row, int col) {
