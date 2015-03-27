@@ -21,10 +21,6 @@ public class Result {
         return (checkWinning(player, lDSet, rDSet));
     }
 
-    private boolean checkWinning(Player player, Set<String> lDSet, Set<String> rDSet) {
-        return (isWining(lDSet, player) || isWining(rDSet, player));
-    }
-
     private boolean  allChecksForWinning(Player player, Set<String> lDSet, Set<String> rDSet, int i) {
         Set<String> rowSet = new HashSet<String>();
         Set<String> colSet = new HashSet<String>();
@@ -36,17 +32,19 @@ public class Result {
         return (checkWinning(player, rowSet, colSet));
     }
 
+    private boolean checkWinning(Player player, Set<String> lDSet, Set<String> rDSet) {
+        return (isWining(lDSet, player) || isWining(rDSet, player));
+    }
+
+    private boolean isWining(Set<String> set, Player player) {
+        return (set.size() == 1 && set.contains(player.getName()));
+    }
+
     private void putIntoDiagonalSet(Set<String> lDSet, int i, int j, Set<String> rDSet) {
         if(i==j)
             lDSet.add(board.getCoordinates()[i][j]);
         if(i+j == maxSize-1)
             rDSet.add(board.getCoordinates()[i][j]);
-    }
-
-    boolean isWining(Set<String> set, Player player) {
-        if (set.size() == 1 && set.contains(player.getName()))
-            return true;
-        return false;
     }
 
     public void hasTied(int count) throws Exception {
