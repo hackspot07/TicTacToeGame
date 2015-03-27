@@ -2,8 +2,7 @@ package com.TicTacToeGame;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Board board = new Board();
-        Game game = new Game(board);
+        Game game = new Game();
         try {
             game.playGame();
         } catch (Exception e) {
