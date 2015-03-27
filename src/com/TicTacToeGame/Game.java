@@ -14,7 +14,7 @@ public class Game {
         o = new Player("o");
     }
 
-    public void playGame() throws Exception {
+    public void runGame() throws Exception {
         while (true) {
             board.printBoard();
             Player player = getPlayer(count);
