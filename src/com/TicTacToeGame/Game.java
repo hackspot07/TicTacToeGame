@@ -17,7 +17,7 @@ public class Game {
     public void runGame() throws Exception {
         while (true) {
             board.printBoard();
-            Player player = getPlayer(count);
+            Player player = setPlayer(count);
             System.out.println("Play Mr./Mrs."+player.getName());
             System.out.println("Enter Row And Column Number From 0-2:");
             Scanner sc = new Scanner(System.in);
@@ -41,7 +41,7 @@ public class Game {
         count++;
     }
 
-    private Player getPlayer(int count) {
+    private Player setPlayer(int count) {
         return (count%2==0) ? o : x;
     }
 }
